@@ -1,5 +1,4 @@
 var arrayCars = ["mustang","m3","porsche", "gt3", "ferrari", "f40", "ford", "model t"]
-console.log("arrayCars: ", arrayCars[2])
 
 // create some buttons
 function renderButton(){
@@ -48,8 +47,13 @@ function showMeTheCars(){
         $(".showmethegifs").empty()
         response.data.forEach(function(giphyObject){
           var img = $('<img>')
-          img.attr('src',giphyObject.images.fixed_height.url)
+          var dataStill = giphyObject.images.fixed_height_still.url
+          var dataAnimate = giphyObject.images.fixed_height.url
+          img.attr('src',dataAnimate)
           img.attr('class','giphy')
+          img.attr('data-animate', dataAnimate)
+          img.attr('data-still', dataStill)
+          img.attr('data-state', 'animate')
           $(".showmethegifs").prepend(img)
         })
         console.log(response);
@@ -65,3 +69,42 @@ renderButton()
 // Adding click event listeners to all elements with a class of "cars"
 $(document).on("click", ".cars", showMeTheCars);
 
+
+$(document).on("click", ".giphy", function() {
+  
+  var state = $(this).attr("data-state")
+
+  console.log("giphy state:",state)
+ 
+ if(state === 'still'){
+   $(this).attr('src', $(this).attr('data-animate'))
+   $(this).attr('data-state','animate')
+ }
+ else{
+  $(this).attr('src', $(this).attr('data-still'))
+   $(this).attr('data-state','still')       
+ }
+
+})
+
+
+
+
+$("#add-gif").on("click", function() {
+
+  // event.preventDefault() prevents submit button from trying to send a form.
+        // Using a submit button instead of a regular button allows the user to hit
+        // "Enter" instead of clicking the button if desired
+        event.preventDefault();
+
+  var newSearch = $("#gif-input").val().trim()
+  var newButton = $("<button>")
+  // add a cars class
+  newButton.addClass("cars")
+  // make a data- attribute with the cars name
+  newButton.attr("data-name",newSearch)
+  // create the button text
+  newButton.text(newSearch)
+  // append this to the div holding all the buttons
+  $(".buttons-view").append(newButton)
+})
