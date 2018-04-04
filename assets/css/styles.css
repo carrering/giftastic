@@ -17,3 +17,14 @@ body{
     height:auto;
     
 }
+
+
+.rating{
+    margin:5px;
+    width:150px;
+    height:200px;
+    text-align:center;
+    float:left;
+
+}
+

@@ -49,12 +49,17 @@ function showMeTheCars(){
           var img = $('<img>')
           var dataStill = giphyObject.images.fixed_height_still.url
           var dataAnimate = giphyObject.images.fixed_height.url
+          var rating = giphyObject.rating
+          var ratingTag = $('<div>')
+          ratingTag.attr('class','rating')
+          ratingTag.text(rating)         
           img.attr('src',dataAnimate)
           img.attr('class','giphy')
           img.attr('data-animate', dataAnimate)
           img.attr('data-still', dataStill)
           img.attr('data-state', 'animate')
-          $(".showmethegifs").prepend(img)
+          ratingTag.append(img)
+          $(".showmethegifs").prepend(ratingTag)
         })
         console.log(response);
       });
