@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GifTastic James</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/styles.css" />
+    
+</head>
+<body>
+    <div class="container">
+            <div class="row">
+                    <!-- Rendered buttons will get dumped Here  -->
+                    <div class="col-md-12 buttons-view">
+                           buttons
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 showmethegifs">
+                        gifs
+                    </div>
+                    <div class="col-md-2 searchforthegifs">
+                            <form id="gif-form">
+                                    <label for="gif-input">Add a car</label>
+                                    <input type="text" id="gif-input"><br>
+                              
+                                    <!-- Button triggers new movie to be added -->
+                                    <input id="add-gif" type="submit" value="Submit">
+                                  </form>
+                              
+                    </div>
+                </div>
+    </div>
+
+
+
+
+    <script src="assets/javascript/main.js"></script>
+</body>
+</html>

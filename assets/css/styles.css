@@ -1,0 +1,19 @@
+body{
+    background-color:#e3e3e3;
+    color:black;
+}
+
+#add-gif{
+    margin-top:10px;
+}
+
+.cars{
+    margin:5px;
+}
+
+.giphy{
+    margin:5px;
+    width:150px;
+    height:auto;
+    
+}
